@@ -12,7 +12,7 @@ A simple Python-based password generator that allows users to create strong pass
 ## Requirements
 
 - Python 3.x
-- 
+  
 ## Installation
 
 1. Clone this repository to your local machine using the following command:
