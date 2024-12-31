@@ -8,15 +8,19 @@ def generate_password():
     """
     print('Welcome to the Password Generator!')
 
+    # Function to get valid input from the user
+    def get_valid_input(prompt):
+        while True:
+            try:
+                return int(input(prompt))
+            except ValueError:
+                print("Invalid input! Please enter a numeric value.")
+
     # Prompt the user for input on password composition
-    try:
-        num_digits = int(input('Enter the number of digits you want in your password: '))
-        num_lowercase = int(input('Enter the number of lowercase letters you want: '))
-        num_uppercase = int(input('Enter the number of uppercase letters you want: '))
-        num_symbols = int(input('Enter the number of symbols you want in your password: '))
-    except ValueError:
-        print("Invalid input! Please enter numeric values.")
-        return
+    num_digits = get_valid_input('Enter the number of digits you want in your password: ')
+    num_lowercase = get_valid_input('Enter the number of lowercase letters you want: ')
+    num_uppercase = get_valid_input('Enter the number of uppercase letters you want: ')
+    num_symbols = get_valid_input('Enter the number of symbols you want in your password: ')
 
     # Generate each component of the password
     digits = random.choices(string.digits, k=num_digits)
@@ -29,6 +33,14 @@ def generate_password():
 
     # Shuffle the components to ensure randomness
     random.shuffle(password_components)
+
+    # Ensure the password starts with a capital letter if any uppercase letters exist
+    if num_uppercase > 0:
+        # Move an uppercase letter to the start
+        for i, char in enumerate(password_components):
+            if char in string.ascii_uppercase:
+                password_components.insert(0, password_components.pop(i))
+                break
 
     # Convert the list into a single password string
     password = ''.join(password_components)
