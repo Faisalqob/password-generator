@@ -1,34 +1,22 @@
 # Password Generator
 
-A simple and customizable password generator built with Python. This script generates strong, random passwords based on user-defined requirements, making it ideal for personal or professional use.
+A simple Python-based password generator that allows users to create strong passwords based on their preferences. The script prompts the user to define the number of digits, lowercase letters, uppercase letters, and symbols they want in their password, then generates a secure and randomized password according to those specifications.
 
 ## Features
 
-- Generates secure passwords with a mix of:
-  - Digits
-  - Lowercase letters
-  - Uppercase letters
-  - Special characters (symbols)
-- Ensures randomness by shuffling all password components.
-- User-friendly prompts to define password composition.
-- Validates user input for a smooth experience.
-
-## How It Works
-
-The script asks the user to specify:
-1. The number of digits in the password.
-2. The number of lowercase letters.
-3. The number of uppercase letters.
-4. The number of symbols.
-
-The program then generates random characters for each category, combines them, and shuffles the result to produce a secure password.
+- Customizable password composition (digits, lowercase letters, uppercase letters, and symbols).
+- Validates user input to ensure only numeric values are entered.
+- Ensures the generated password starts with an uppercase letter if uppercase letters are requested.
+- Randomizes the order of the password components to maximize security.
 
 ## Requirements
 
 - Python 3.x
-
+- 
 ## Installation
 
-1. Clone the repository:
+1. Clone this repository to your local machine using the following command:
+
    ```bash
    git clone https://github.com/Faisalqob/password-generator.git
+
